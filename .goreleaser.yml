@@ -21,6 +21,8 @@ archives:
       darwin: Darwin
       linux: Linux
       amd64: x86_64
+    name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}"
+    format: binary
     files:
       - LICENSE
       - README.md
