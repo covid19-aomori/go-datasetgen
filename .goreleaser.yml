@@ -1,0 +1,36 @@
+before:
+  hooks:
+    - go mod download
+
+builds:
+  - main: ./datasetgen/main.go
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      -X github.com/covid19-aomori/go-datasetgen/datasetgen/cmd.Version={{ .Version }}
+    goos:
+      - darwin
+      - linux
+    goarch:
+      - amd64
+
+archives:
+  - id: github release
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      amd64: x86_64
+    files:
+      - LICENSE
+      - README.md
+      - _datasetgen
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'

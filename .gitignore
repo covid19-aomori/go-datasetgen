@@ -1,3 +1,4 @@
 dist/
 __*
 .envrc
+datasetgen/datasetgen
