@@ -4,6 +4,7 @@ before:
 
 builds:
   - main: ./datasetgen/main.go
+    binary: datasetgen
     env:
       - CGO_ENABLED=0
     ldflags:
