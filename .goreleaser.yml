@@ -23,7 +23,6 @@ archives:
     files:
       - LICENSE
       - README.md
-      - _datasetgen
 checksum:
   name_template: 'checksums.txt'
 snapshot:
